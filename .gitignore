@@ -1,0 +1,23 @@
+# Ignore .env file
+.env
+
+# Ignore node modules
+node_modules/
+
+# Ignore logs
+logs
+*.log
+npm-debug.log*
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+
+# Ignore build files
+dist/
+
+# Ignore macOS specific files
+.DS_Store
