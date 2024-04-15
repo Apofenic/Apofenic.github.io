@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tech-docs-tester
+  description: for tech docs. 
+spec:
+  type: service
+  lifecycle: development
+  owner: me
