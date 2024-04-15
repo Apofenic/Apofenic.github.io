@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:Apofenic/Apofenic.github.io.git",
   "author": "apofenic <anthonylubrino@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts" : {
+    "build": "./"
+  }
 }
