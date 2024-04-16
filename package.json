@@ -5,7 +5,10 @@
   "repository": "git@github.com:Apofenic/Apofenic.github.io.git",
   "author": "apofenic <anthonylubrino@gmail.com>",
   "license": "MIT",
-  "scripts" : {
+  "scripts": {
     "build": "./"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }
