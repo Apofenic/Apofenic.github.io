@@ -27,10 +27,6 @@ jobs:
       # ENTITY_NAME: '{{ cookiecutter.component_id | jsonify }}'
 
     steps:
-      - name: Log environment variables
-        run: |
-          echo "TECHDOCS_S3_BUCKET_NAME: $TECHDOCS_S3_BUCKET_NAME"
-          echo "AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID"
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -65,5 +61,15 @@ jobs:
       - name: Generate docs site
         run: techdocs-cli generate --no-docker --verbose
 
+      - name: Log environment variables
+        run: |
+          echo "TECHDOCS_S3_BUCKET_NAME: $TECHDOCS_S3_BUCKET_NAME"
+          echo "AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID"
+          echo "AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY"
+          echo "AWS_REGION: $AWS_REGION"
+          echo "ENTITY_NAMESPACE: $ENTITY_NAMESPACE"
+          echo "ENTITY_KIND: $ENTITY_KIND"
+          echo "ENTITY_NAME: $ENTITY_NAME"
+
       - name: Publish docs site
-        run: techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity default/Component/Apofenic.github.io --verbose
+        run: techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
